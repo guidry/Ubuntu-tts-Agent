@@ -6,6 +6,9 @@ sudo apt-get  -y  install libttspico-utils
 sudo apt-get -y install xsel libnotify-bin libttspico0 libttspico-utils libttspico-data libwww-perl libwww-mechanize-perl libhtml-tree-perl sox libsox-fmt-mp3
 #git clone https://github.com/Glutanimate/simple-google-tts.git
 #sudo mv simple-google-tts/* /opt/xu_tts/
+
+sudo mkdir -p /opt/xu_tts
+
 echo '
 #!/bin/bash
 #if [ -z $running ]
