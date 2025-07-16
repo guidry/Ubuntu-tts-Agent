@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get -y install xclip
 sudo apt-get  -y  install festival
 sudo apt-get  -y  install festvox-us1 festvox-us2 festvox-us3
