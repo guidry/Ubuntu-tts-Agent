@@ -9,7 +9,7 @@ echo "🟢 Installing Piper TTS and integrating with Speech Dispatcher..."
 # Install dependencies
 echo "🟡 Checking dependencies (wget, aplay)..."
 sudo apt install -y wget alsa-utils libsox-dev
-sudo apt install -y socat
+sudo apt install -y socat espeak-ng
 # Download Piper binary
 echo "⬇️ Downloading Piper binary..."
 wget https://github.com/rhasspy/piper/releases/latest/download/piper_linux_x86_64.tar.gz -O /tmp/piper_linux_x86_64.tar.gz
