@@ -1,6 +1,20 @@
 #!/bin/bash
-sudo apt-get install -y midori
+#sudo apt-get install -y midori
 sudo apt-get -y install xclip
+# Check if the download was successful
+if [ $? -eq 0 ]; then
+    echo "Midori 瀏覽器成功下載了，可供查字典使用"
+else
+    echo "Midori 瀏覽器下載失敗，請另行手動設定"    
+fi
+# Install the .deb package using dpkg
+echo "Installing Midori..."
+sudo dpkg -i $DEB_FILE
+# Fix any missing dependencies
+sudo apt --fix-broken install -y
+# Clean up by removing the downloaded .deb file
+rm $DEB_FILE
+echo "Midori installation completed!"
 
 
 echo '
