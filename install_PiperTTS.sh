@@ -56,6 +56,7 @@ sudo chmod +x "/usr/local/bin/piper-tts.sh"
 
 # Add Piper module to Speech Dispatcher
 echo "⚙️ Configuring Speech Dispatcher module..."
+mkdir -p ~/.config/speech-dispatcher/modules
 sudo tee $HOME/.config/speech-dispatcher/modules/piper.conf > /dev/null <<'EOF'
 GenericExecuteSynth "if command -v sox > /dev/null; then\
         SAFE_RATE=\$(echo \"$RATE\" | awk '{ if (\$1 < 0.8) print 0.8; else if (\$1 > 1.4) print 1.4; else print \$1 }');\
