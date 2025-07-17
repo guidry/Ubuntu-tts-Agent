@@ -7,7 +7,7 @@ sudo apt install -y wget gdebi-core
 
 # Download the latest Midori .deb
 wget -O ~/midori.deb \
-  https://astian.org/midori-browser/download/linux/midori_11.5.2-1_amd64.deb
+  https://github.com/goastian/midori-desktop/releases/download/v11.5.3/midori_11.5.3-1_amd64.deb
 if [ $? -eq 0 ]; then
     echo "Midori 瀏覽器成功下載了，可供查字典使用"
 else
