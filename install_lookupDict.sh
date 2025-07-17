@@ -1,20 +1,23 @@
 #!/bin/bash
 #sudo apt-get install -y midori
 sudo apt-get -y install xclip
-# Check if the download was successful
+# Install gdebi if not present
+sudo apt update
+sudo apt install -y wget gdebi-core
+
+# Download the latest Midori .deb
+wget -O ~/midori.deb \
+  https://astian.org/midori-browser/download/linux/midori_11.5.2_amd64.deb
 if [ $? -eq 0 ]; then
     echo "Midori 瀏覽器成功下載了，可供查字典使用"
 else
     echo "Midori 瀏覽器下載失敗，請另行手動設定"    
 fi
-# Install the .deb package using dpkg
-echo "Installing Midori..."
-sudo dpkg -i $DEB_FILE
-# Fix any missing dependencies
-sudo apt --fix-broken install -y
-# Clean up by removing the downloaded .deb file
-rm $DEB_FILE
-echo "Midori installation completed!"
+# Install using gdebi for automatic dependency resolution
+sudo gdebi -n ~/midori.deb
+# Clean up
+rm ~/midori.deb
+
 
 
 echo '
