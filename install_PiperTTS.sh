@@ -57,7 +57,7 @@ sudo chmod +x "/usr/local/bin/piper-tts.sh"
 # Add Piper module to Speech Dispatcher
 echo "⚙️ Configuring Speech Dispatcher module..."
 mkdir -p ~/.config/speech-dispatcher/modules
-sudo tee $HOME/.config/speech-dispatcher/modules/piper.conf > /dev/null <<'EOF'
+tee $HOME/.config/speech-dispatcher/modules/piper.conf > /dev/null <<'EOF'
 GenericExecuteSynth "if command -v sox > /dev/null; then\
         SAFE_RATE=\$(echo \"$RATE\" | awk '{ if (\$1 < 0.8) print 0.8; else if (\$1 > 1.4) print 1.4; else print \$1 }');\
         PROCESS='sox -r 22050 -c 1 -b 16 -e signed-integer -t raw - -t wav - tempo '\$SAFE_RATE' pitch $PITCH norm';\
@@ -79,7 +79,7 @@ GenericPitchMultiply 1000
 AddVoice "en-us" "MALE1" "en_US-ryan-high.onnx"
 EOF
 
-sudo tee -a $HOME/.config/speech-dispatcher/speechd.conf > /dev/null <<'EOF'
+tee -a $HOME/.config/speech-dispatcher/speechd.conf > /dev/null <<'EOF'
 # Piper TTS
 AddModule "piper" "sd_generic" "piper.conf"
 DefaultVoiceType  "MALE1"
