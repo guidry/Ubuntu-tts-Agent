@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo apt install pulseaudio-utils
+sudo apt install -y pulseaudio-utils
+sudo apt install -y sox
 #./piper --model /home/cashier/.local/share/piper/models/en_US-lessac-medium.onnx --text "Hello, this is a Piper TTS demo on Linux." --output_file piper_output.wav
 #echo "Hello, this is a Piper TTS demo on Linux." | ./piper --model /home/cashier/.local/share/piper/models/en_US-lessac-medium.onnx --output_file /home/guidry/tmp/piper_output.wav
 #./piper --model /home/cashier/.local/share/piper/models/en_US-lessac-medium.onnx --output_file /home/cashier/tmp/piper_output.wav --text "Hello, this is a Piper TTS demo on Linux."
